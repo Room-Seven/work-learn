@@ -1,4 +1,10 @@
 <?php
+/**
+ * @package     Work-Learn
+ * @author      Ron Tayler
+ * @copyright   2020
+ */
+
 
 // HTTP & HTTPS Ссылки
 define('DOMEN', 'work-learn.room-seven.ru')

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @package     Work-Learn
+ * @author      Ron Tayler
+ * @copyright   2020
+ */
 // Error Reporting
 error_reporting(E_ALL);
 

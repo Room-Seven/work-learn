@@ -1,4 +1,9 @@
 <?php
+/**
+ * @package     Work-Learn
+ * @author      Ron Tayler
+ * @copyright   2020
+ */
 /*
 CREATE TABLE IF NOT EXISTS `session` (
   `session_id` varchar(32) NOT NULL,

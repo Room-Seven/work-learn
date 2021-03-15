@@ -1,4 +1,9 @@
 <?php
+/**
+ * @package     Work-Learn
+ * @author      Ron Tayler
+ * @copyright   2020
+ */
 function token($length = 32) {
 	// Create random token
 	$string = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';

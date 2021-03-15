@@ -1,4 +1,9 @@
 <?php
+/**
+ * @package     Work-Learn
+ * @author      Ron Tayler
+ * @copyright   2020
+ */
 namespace Cache;
 class Memcached {
 	private $expire;

@@ -1,4 +1,9 @@
 <?php
+/**
+ * @package     Work-Learn
+ * @author      Ron Tayler
+ * @copyright   2020
+ */
 /* BBCode Converter that converts BBCode writen in ckeditor */	
 function bbcode_decode($string) {  
     $pattern = array();

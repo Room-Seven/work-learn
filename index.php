@@ -1,4 +1,10 @@
 <?php
+/**
+ * @package     Work-Learn
+ * @author      Ron Tayler
+ * @copyright   2020
+ */
+
 // Дополнительная проверка запроса после .htaccess
 if(preg_match("/\.(php|html|ico|png|jpg|jpeg|css|js|svg)$/",$_GET['route'])){
     header('HTTP/1.0 404 Not Found');
