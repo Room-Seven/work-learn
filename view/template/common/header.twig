@@ -1,0 +1,17 @@
+<header class="header">
+<div class="container">
+    <div class="header__logo">
+        <a href="/home"><img src="img/logo.svg" alt=""></a>
+        <a href="/home"><span>Work-Learn</span></a>
+    </div>
+    <div class="header__menu">
+        <a href="/add-task">Добавить задание</a>
+        {% if isLogged %}
+            <a href="/logout">Выход</a>
+            <span class="header__user">{{ user_name }}</span>
+        {% else %}
+            <a href="/login">Вход</a>
+        {% endif %}
+    </div>
+</div>
+</header>

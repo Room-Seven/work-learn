@@ -1,0 +1,32 @@
+<div class="container">
+    {% if error %}
+        <div class="form__error alert alert-danger">
+            <span>{{ error }}</span>
+            <button class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <h1>Авторизация</h1>
+    <form id="form-task" action="login" method="post">
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="login">Логин:</label>
+            </div>
+            <div class="col-9">
+                <input required class="form-control" type="text" name="login" placeholder="Логин">
+                <small id="LoginHelp" class="form-text text-muted">Привет Юзер, не обижай систему, а то забаню.</small>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="password">Пароль:</label>
+            </div>
+            <div class="col-9">
+                <input required class="form-control" type="password" name="password" placeholder="Пароль">
+                <small id="PasswordHelp" class="form-text text-muted">Оглянись по сторонам, заклей вебку и будь осторожен!</small>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2">Войти</button>
+    </form>
+</div>

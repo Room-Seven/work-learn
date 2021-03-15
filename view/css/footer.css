@@ -1,0 +1,26 @@
+.footer{
+    position: fixed;
+    height: 40px;
+    width: 100%;
+    bottom: 0;
+    background-color: #00a480;
+    color: white;
+}
+
+.footer .container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.footer__text{
+	font-size: 14px;
+}
+
+.footer__text a{
+    color: white;
+}
+
+.footer__text a:hover{
+    color: rgba(255, 255, 255, 0.5);
+}

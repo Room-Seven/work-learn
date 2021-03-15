@@ -1,0 +1,61 @@
+<div class="container">
+    {% if error %}
+        <div class="form__error alert alert-danger">
+            <span>{{ error }}</span>
+            <button class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <h1>Редактировать задание</h1>
+    <hr>
+    <form id="form-task" action="edit-task?task_id={{ task_id }}" method="post">
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="name">Имя:</label>
+            </div>
+            <div class="col-9">
+                <input required tabindex="1" class="form-control" type="text" id="name" name="name" placeholder="Имя" value="{{ task_name }}">
+                <small id="nameHelp" class="form-text text-muted">Имя создателя задания.</small>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="e-mail">E-mail:</label>
+            </div>
+            <div class="col-9">
+                <input required tabindex="2" class="form-control" type="email" id="e-mail" name="e-mail" placeholder="e-mail" value="{{ task_email }}">
+                <small id="emailHelp" class="form-text text-muted">Почта создателя задания.</small>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="task-text">Текст задания</label>
+            </div>
+            <div class="col-9">
+                <textarea rows="5" required tabindex="3" class="form-control" type="text" id="task-text" name="task-text" placeholder="Задание">{{ task_text }}</textarea>
+                <small id="textHelp" class="form-text text-muted">Текст задания.</small>
+            </div>
+        </div>
+
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="task-status">Статус задания</label>
+            </div>
+            <div class="col-9">
+                <select tabindex="4" class="form-control" name="task-status" id="task-status">
+                    {% for status in statuses %}
+                        <option  {% if status['select'] %}  selected  {% endif %}  value="{{status['id']}}">{{status['comment']}}</option>
+                    {% endfor %}
+                </select>
+                <small id="statusHelp" class="form-text text-muted">Статус выполнения задания.</small>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <a href="{{ referer }}" class="btn btn-secondary mb-2">Назад</a>
+            <button tabindex="5" type="submit" class="btn btn-primary mb-2">Сохранить задание</button>
+        </div>
+    </form>
+</div>

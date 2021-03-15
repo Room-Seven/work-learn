@@ -1,0 +1,45 @@
+<div class="container">
+    {% if error %}
+        <div class="form__error alert alert-danger">
+            <span>{{ error }}</span>
+            <button class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+        </div>
+    {% endif %}
+    <h1>Новое задание</h1>
+    <hr>
+    <form id="form-task" action="add-task" method="post">
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="name">Имя:</label>
+            </div>
+            <div class="col-9">
+                <input required class="form-control" type="text" id="name" name="name" placeholder="Имя">
+                <small id="nameHelp" class="form-text text-muted">Вы звезда и здесь обязательно должно сверкать ваше имя.</small>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="e-mail">E-mail:</label>
+            </div>
+            <div class="col-9">
+                <input required class="form-control" type="email" id="e-mail" name="e-mail" placeholder="e-mail">
+                <small id="emailHelp" class="form-text text-muted">Оставьте свою почту и мы обязательно вам напишем.</small>
+            </div>
+        </div>
+        <div class="row form-group">
+            <div class="col-3">
+                <label for="task-text">Текст задания</label>
+            </div>
+            <div class="col-9">
+                <textarea rows="5" required class="form-control" type="text" id="task-text" name="task-text" placeholder="Задание"></textarea>
+                <small id="textHelp" class="form-text text-muted">Так какое у вас задание?</small>
+            </div>
+        </div>
+        <div class="row justify-content-between">
+            <a href="{{ referer }}" class="btn btn-secondary mb-2">Назад</a>
+            <button type="submit" class="btn btn-primary mb-2">Добавить задание</button>
+        </div>
+    </form>
+</div>

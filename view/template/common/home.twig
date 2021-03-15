@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="home__container">
+        <div class="task__canvas">
+            <div class="row task__row justify-content-center">
+            {% for task in tasks %}
+            <div class="col-4 task__col">
+                <div class="task">
+                    <div class="task__head">
+                        <div class="task__author">
+                            <span class="task__author__name">{{task['user-name']}}</span>
+                            <br>
+                            <a href="mailto:{{task['e-mail']}}" class="task__author__email">{{task['e-mail']}}</a>
+                        </div>
+                        <div class="task__icon">
+                            {% if task['isEdit'] %}
+                                <a title="Редактировать" href="/edit-task?task_id={{ task['id'] }}"><img src="/img/icon/task-edit.svg" alt="clock" width="16" height="16"></a>
+                            {% endif %}
+                            <img title="{{task['status-title']}}" src="{{task['status-icon']}}" alt="status" width="16" height="16">
+                        </div>
+                    </div>
+                    <div class="task__body">
+                        <p class="task__text">
+                            {{task['text']}}
+                        </p>
+                    </div>
+                    <div class="task__time">
+                        <span class="time-tooltip" title="{{ task['time-tooltip'] }}">{{ task['time'] }}</span>
+                    </div>
+                </div>
+            </div>
+            {% else %}
+            <div class="col-auto">
+                <span>Задания не найдены...</span>
+            </div>
+            {% endfor %}
+            </div>
+        </div>
+        <div class="pagination__row">
+            {{pagination}}
+        </div>
+    </div>
+</div>
+<div class="sort__container">
+    <div class="sort__menu">
+        <a href="{{ sort_user_href }}" class="sort__menu_item" id="sort_name">
+            <span class="ASC {% if not isSortUserASC %} hide{% endif %}">&#9650;</span>
+            <span>Имя</span>
+            <span class="DESC {% if not isSortUserDESC %} hide{% endif %}">&#9660;</span>
+        </a>
+        <a href="{{ sort_email_href }}" class="sort__menu_item" id="sort_email">
+            <span class="ASC {% if not isSortEmailASC %} hide{% endif %}">&#9650;</span>
+            <span>E-mail</span>
+            <span class="DESC {% if not isSortEmailDESC %} hide{% endif %}">&#9660;</span>
+        </a>
+        <a href="{{ sort_status_href }}" class="sort__menu_item" id="sort_status">
+            <span class="ASC {% if not isSortStatusASC %} hide{% endif %}">&#9650;</span>
+            <span>Статус</span>
+            <span class="DESC {% if not isSortStatusDESC %} hide{% endif %}">&#9660;</span>
+        </a>
+    </div>
+</div>
